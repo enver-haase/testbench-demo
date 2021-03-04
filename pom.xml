@@ -11,9 +11,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <vaadin.version>8.0.0</vaadin.version>
+        <vaadin.version>8.12.3</vaadin.version>
         <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
-        <vaadin.testbench.version>5.0.0</vaadin.testbench.version>
+        <vaadin.testbench.version>5.2.0</vaadin.testbench.version>
     </properties>
     <repositories>
         <repository>
@@ -199,6 +199,12 @@
             <artifactId>jbehave-core</artifactId>
             <version>3.7.5</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-testbench-core</artifactId>
+            <version>5.2.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

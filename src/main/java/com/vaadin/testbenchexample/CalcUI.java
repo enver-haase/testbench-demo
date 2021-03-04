@@ -2,12 +2,16 @@ package com.vaadin.testbenchexample;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
+import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+
+import javax.servlet.annotation.WebServlet;
 
 @Theme("valo")
 @Title("Calculator example")
@@ -56,6 +60,11 @@ public class CalcUI extends UI {
         // Set the container containing the app panel to be our UI content
         // to display our app.
         setContent(container);
+    }
+
+    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+    @VaadinServletConfiguration(ui = CalcUI.class, productionMode = false)
+    public static class MyUIServlet extends VaadinServlet {
     }
 
 }
